@@ -152,14 +152,30 @@
   .copyline button { font: 500 .75rem/1 var(--mono); background: none; border: 1px solid var(--rule); color: var(--ink); padding: 6px 10px; border-radius: 99px; cursor: pointer; }
   @media (max-width: 820px) { .ticket { grid-template-columns: 1fr; } .stub { border-left: 0; border-top: 1px dashed var(--rule); } }
 
-  /* Date boxes */
-  .stub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .stub-grid .stub.standalone {
-    background: var(--paper-2); border: 1px solid var(--rule); border-radius: 4px;
-    padding: clamp(20px, 3vw, 30px); display: grid; gap: 0; align-content: start;
-    transition: background-color .5s ease;
+  /* Ticket stubs */
+  .stub-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .ticket-stub {
+    display: grid; grid-template-columns: auto auto 1fr; align-items: stretch;
+    background: var(--paper-2); border: 1px solid var(--rule); border-radius: 8px;
+    overflow: hidden; transition: background-color .5s ease;
   }
-  @media (max-width: 720px) { .stub-grid { grid-template-columns: 1fr; } }
+  .ts-date {
+    display: grid; align-content: center; justify-items: center; gap: 2px;
+    padding: 20px 22px; background: var(--logo); color: var(--paper);
+  }
+  .ts-day { font: 900 clamp(2.6rem, 5vw, 3.4rem)/.85 var(--display); letter-spacing: -.02em; }
+  .ts-mon { font: 700 .8rem/1 var(--mono); letter-spacing: .12em; }
+  .ts-wd { font: 500 .68rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; opacity: .75; margin-top: 4px; }
+  .ts-perf {
+    width: 0; border-left: 2px dashed var(--rule);
+    background-image: radial-gradient(circle, var(--paper) 3px, transparent 3.5px);
+    background-size: 100% 18px; background-repeat: repeat-y; background-position: center;
+  }
+  .ts-body { padding: 18px 22px; display: grid; gap: 6px; align-content: center; font-size: .92rem; color: var(--ink-soft); }
+  .ts-row time { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .ts-who { font-size: .85rem; margin-top: 4px; }
+  @media (max-width: 720px) { .stub-grid { grid-template-columns: 1fr; } .ticket-stub { grid-template-columns: auto auto 1fr; } }
+  @media (max-width: 460px) { .ticket-stub { grid-template-columns: 1fr; } .ts-date { flex-direction: row; padding: 14px 18px; grid-auto-flow: column; gap: 10px; } .ts-perf { width: auto; height: 0; border-left: 0; border-top: 2px dashed var(--rule); background-image: radial-gradient(circle, var(--paper) 3px, transparent 3.5px); background-size: 18px 100%; background-position: center; } }
 
   /* Philosophy */
   .manifesto { font: 300 clamp(1.5rem, 3vw, 2.35rem)/1.3 var(--display); letter-spacing: -.01em; max-width: 30ch; margin: 0; }
@@ -259,62 +275,78 @@
     </div>
 
     <div class="stub-grid">
-    <div class="stub standalone">
-      <dl>
-        <div class="row"><dt>Date</dt><dd><time datetime="2026-09-30">Wednesday 30 September 2026</time></dd></div>
-        <div class="row"><dt>Time</dt><dd><time datetime="2026-09-30T19:30">7:30</time>&ndash;<time datetime="2026-09-30T21:00">9:00 pm</time><small>With a break for drinks &amp; practice</small></dd></div>
-        <div class="row"><dt>After</dt><dd>Social until late</dd></div>
-        <div class="row"><dt>Venue</dt><dd>Keystone Crescent<small>King's Cross, London N1 9DX</small></dd></div>
-        <div class="row"><dt>Price</dt><dd>&pound;10 + booking fee</dd></div>
-        <div class="row"><dt>Who</dt><dd>Dancers with at least a few months of experience, in any style</dd></div>
-      </dl>
-      <div class="ctas" style="margin-top:0">
-        <a class="btn js-book" href="mailto:roguebachata@gmail.com?subject=deRogue%20Workshop%20%E2%80%94%20Wed%2030%20Sep">Reserve a place</a>
-        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Keystone+Crescent+Kings+Cross+London+N1+9DX" target="_blank" rel="noopener">Map</a>
+      <div class="ticket-stub">
+        <div class="ts-date">
+          <span class="ts-day">30</span>
+          <span class="ts-mon">SEP</span>
+          <span class="ts-wd">Wednesday</span>
+        </div>
+        <div class="ts-perf" aria-hidden="true"></div>
+        <div class="ts-body">
+          <div class="ts-row"><time datetime="2026-09-30T19:30">7:30</time>&ndash;<time datetime="2026-09-30T21:00">9:00 pm</time></div>
+          <div class="ts-row">Keystone Crescent, King's Cross</div>
+          <div class="ts-row">&pound;10 + booking fee</div>
+          <div class="ts-row ts-who">Dancers with at least a few months of experience, in any style</div>
+          <div class="ctas" style="margin-top:12px">
+            <a class="btn js-book" href="mailto:roguebachata@gmail.com?subject=deRogue%20Workshop%20%E2%80%94%20Wed%2030%20Sep">Reserve a place</a>
+            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Keystone+Crescent+Kings+Cross+London+N1+9DX" target="_blank" rel="noopener">Map</a>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="stub standalone">
-      <dl>
-        <div class="row"><dt>Date</dt><dd><time datetime="2026-10-07">Wednesday 07 October 2026</time></dd></div>
-        <div class="row"><dt>Time</dt><dd><time datetime="2026-10-07T19:30">7:30</time>&ndash;<time datetime="2026-10-07T21:00">9:00 pm</time><small>With a break for drinks &amp; practice</small></dd></div>
-        <div class="row"><dt>After</dt><dd>Social until late</dd></div>
-        <div class="row"><dt>Venue</dt><dd>Keystone Crescent<small>King's Cross, London N1 9DX</small></dd></div>
-        <div class="row"><dt>Price</dt><dd>&pound;10 + booking fee</dd></div>
-        <div class="row"><dt>Who</dt><dd>Dancers with at least a few months of experience, in any style</dd></div>
-      </dl>
-      <div class="ctas" style="margin-top:0">
-        <a class="btn js-book" href="mailto:roguebachata@gmail.com?subject=deRogue%20Workshop%20%E2%80%94%20Wed%2007%20Oct">Reserve a place</a>
-        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Keystone+Crescent+Kings+Cross+London+N1+9DX" target="_blank" rel="noopener">Map</a>
+      <div class="ticket-stub">
+        <div class="ts-date">
+          <span class="ts-day">07</span>
+          <span class="ts-mon">OCT</span>
+          <span class="ts-wd">Wednesday</span>
+        </div>
+        <div class="ts-perf" aria-hidden="true"></div>
+        <div class="ts-body">
+          <div class="ts-row"><time datetime="2026-10-07T19:30">7:30</time>&ndash;<time datetime="2026-10-07T21:00">9:00 pm</time></div>
+          <div class="ts-row">Keystone Crescent, King's Cross</div>
+          <div class="ts-row">&pound;10 + booking fee</div>
+          <div class="ts-row ts-who">Dancers with at least a few months of experience, in any style</div>
+          <div class="ctas" style="margin-top:12px">
+            <a class="btn js-book" href="mailto:roguebachata@gmail.com?subject=deRogue%20Workshop%20%E2%80%94%20Wed%2007%20Oct">Reserve a place</a>
+            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Keystone+Crescent+Kings+Cross+London+N1+9DX" target="_blank" rel="noopener">Map</a>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="stub standalone">
-      <dl>
-        <div class="row"><dt>Date</dt><dd><time datetime="2026-10-14">Wednesday 14 October 2026</time></dd></div>
-        <div class="row"><dt>Time</dt><dd><time datetime="2026-10-14T19:30">7:30</time>&ndash;<time datetime="2026-10-14T21:00">9:00 pm</time><small>With a break for drinks &amp; practice</small></dd></div>
-        <div class="row"><dt>After</dt><dd>Social until late</dd></div>
-        <div class="row"><dt>Venue</dt><dd>Keystone Crescent<small>King's Cross, London N1 9DX</small></dd></div>
-        <div class="row"><dt>Price</dt><dd>&pound;10 + booking fee</dd></div>
-        <div class="row"><dt>Who</dt><dd>Dancers with at least a few months of experience, in any style</dd></div>
-      </dl>
-      <div class="ctas" style="margin-top:0">
-        <a class="btn js-book" href="mailto:roguebachata@gmail.com?subject=deRogue%20Workshop%20%E2%80%94%20Wed%2014%20Oct">Reserve a place</a>
-        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Keystone+Crescent+Kings+Cross+London+N1+9DX" target="_blank" rel="noopener">Map</a>
+      <div class="ticket-stub">
+        <div class="ts-date">
+          <span class="ts-day">14</span>
+          <span class="ts-mon">OCT</span>
+          <span class="ts-wd">Wednesday</span>
+        </div>
+        <div class="ts-perf" aria-hidden="true"></div>
+        <div class="ts-body">
+          <div class="ts-row"><time datetime="2026-10-14T19:30">7:30</time>&ndash;<time datetime="2026-10-14T21:00">9:00 pm</time></div>
+          <div class="ts-row">Keystone Crescent, King's Cross</div>
+          <div class="ts-row">&pound;10 + booking fee</div>
+          <div class="ts-row ts-who">Dancers with at least a few months of experience, in any style</div>
+          <div class="ctas" style="margin-top:12px">
+            <a class="btn js-book" href="mailto:roguebachata@gmail.com?subject=deRogue%20Workshop%20%E2%80%94%20Wed%2014%20Oct">Reserve a place</a>
+            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Keystone+Crescent+Kings+Cross+London+N1+9DX" target="_blank" rel="noopener">Map</a>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="stub standalone">
-      <dl>
-        <div class="row"><dt>Date</dt><dd><time datetime="2026-10-21">Wednesday 21 October 2026</time></dd></div>
-        <div class="row"><dt>Time</dt><dd><time datetime="2026-10-21T19:30">7:30</time>&ndash;<time datetime="2026-10-21T21:00">9:00 pm</time><small>With a break for drinks &amp; practice</small></dd></div>
-        <div class="row"><dt>After</dt><dd>Social until late</dd></div>
-        <div class="row"><dt>Venue</dt><dd>Keystone Crescent<small>King's Cross, London N1 9DX</small></dd></div>
-        <div class="row"><dt>Price</dt><dd>&pound;10 + booking fee</dd></div>
-        <div class="row"><dt>Who</dt><dd>Dancers with at least a few months of experience, in any style</dd></div>
-      </dl>
-      <div class="ctas" style="margin-top:0">
-        <a class="btn js-book" href="mailto:roguebachata@gmail.com?subject=deRogue%20Workshop%20%E2%80%94%20Wed%2021%20Oct">Reserve a place</a>
-        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Keystone+Crescent+Kings+Cross+London+N1+9DX" target="_blank" rel="noopener">Map</a>
+      <div class="ticket-stub">
+        <div class="ts-date">
+          <span class="ts-day">21</span>
+          <span class="ts-mon">OCT</span>
+          <span class="ts-wd">Wednesday</span>
+        </div>
+        <div class="ts-perf" aria-hidden="true"></div>
+        <div class="ts-body">
+          <div class="ts-row"><time datetime="2026-10-21T19:30">7:30</time>&ndash;<time datetime="2026-10-21T21:00">9:00 pm</time></div>
+          <div class="ts-row">Keystone Crescent, King's Cross</div>
+          <div class="ts-row">&pound;10 + booking fee</div>
+          <div class="ts-row ts-who">Dancers with at least a few months of experience, in any style</div>
+          <div class="ctas" style="margin-top:12px">
+            <a class="btn js-book" href="mailto:roguebachata@gmail.com?subject=deRogue%20Workshop%20%E2%80%94%20Wed%2021%20Oct">Reserve a place</a>
+            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Keystone+Crescent+Kings+Cross+London+N1+9DX" target="_blank" rel="noopener">Map</a>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
 
     <p class="copyline" style="justify-content:center; margin-top: 22px;">
