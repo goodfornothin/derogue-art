@@ -261,12 +261,14 @@
   }
   @media (max-width: 520px) {
     .venue-gallery {
-      display: flex; grid-template-rows: none; height: auto;
-      overflow-x: auto; scroll-snap-type: x mandatory;
-      gap: 10px; padding-bottom: 6px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 300px 190px 190px;
+      height: auto;
+      overflow: visible;
     }
-    .venue-shot { flex: 0 0 78%; height: 440px; scroll-snap-align: start; }
-    .venue-shot-lead { flex-basis: 88%; grid-row: auto; }
+    .venue-shot { height: 100%; }
+    .venue-shot-lead { grid-column: 1 / -1; grid-row: 1; }
   }
 
   /* Philosophy */
