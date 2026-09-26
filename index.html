@@ -185,6 +185,10 @@
   .phil .cols h3 { font-size: 1.35rem; font-weight: 900; margin-bottom: 8px; }
   .phil .cols p { margin: 0; color: var(--ink-soft); }
   @media (max-width: 820px) { .phil { grid-template-columns: 1fr; } .phil .cols { grid-template-columns: 1fr; gap: 24px; } }
+  .essay { margin-top: 40px; max-width: 68ch; display: grid; gap: 14px; border-top: 1px solid var(--rule); padding-top: 32px; }
+  .essay h3 { font-size: 1.1rem; font-weight: 700; margin-top: 14px; }
+  .essay p { margin: 0; color: var(--ink-soft); line-height: 1.6; }
+  .essay > p:first-child { font-size: 1.05rem; color: var(--ink); }
 
   /* Watch */
   .video-card {
@@ -218,10 +222,19 @@
   .principles .k { font: 500 .72rem/1 var(--mono); color: var(--ink-soft); letter-spacing: .1em; }
   .principles h3 { font-size: 1.3rem; font-weight: 400; }
   .principles p { margin: 0; color: var(--ink-soft); font-size: .98rem; }
-  .principles p.ex { font-size: .86rem; font-style: italic; opacity: .85; border-top: 1px dashed var(--rule); padding-top: 10px; margin-top: 2px; }
+  .principles p.ex { font-size: .88rem; opacity: .9; border-top: 1px dashed var(--rule); padding-top: 10px; margin-top: 2px; line-height: 1.55; }
   .principles-note { margin: 18px 2px 0; color: var(--ink-soft); font-size: .88rem; }
   @media (max-width: 900px) { .principles { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 560px) { .principles { grid-template-columns: 1fr; } }
+
+  /* Exercises */
+  .exercises { margin-top: 44px; }
+  .exercises h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 18px; }
+  .ex-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+  .ex-grid article { background: var(--paper); padding: 22px 24px 26px; display: grid; gap: 8px; align-content: start; transition: background-color .5s ease; }
+  .ex-grid h4 { font-size: 1.05rem; font-weight: 700; margin: 0; }
+  .ex-grid p { margin: 0; color: var(--ink-soft); font-size: .92rem; line-height: 1.6; }
+  @media (max-width: 720px) { .ex-grid { grid-template-columns: 1fr; } }
 
   /* Dances */
   .dances { display: flex; flex-wrap: wrap; gap: 10px 14px; font: 300 clamp(1.4rem, 3vw, 2.2rem)/1.2 var(--display); }
@@ -392,6 +405,28 @@
             <p>When two people trust the channel, they can let go of control. That is where freedom in partner dance actually lives.</p>
           </div>
         </div>
+
+        <div class="essay">
+          <p>Partner dance isn&rsquo;t a fixed set of steps, patterns and rules. Every person already has movement inside them &mdash; deRogue is about two people creating movement that speaks for both of them, and listens to both of them. We want you to taste connection: something that only exists between two particular human beings, in that particular moment.</p>
+
+          <h3>Where this started</h3>
+          <p>Oscar was once the nervous beginner at a sensual bachata class, standing well back from the floor. One of the most in-demand dancers in the room came over, took him into close embrace, and told him to forget everything he thought he knew &mdash; just feel the connection and move with her. That&rsquo;s the whole of deRogue, really: connection before steps.</p>
+
+          <h3>On mistakes</h3>
+          <p>Mistakes make art. Nothing perfect is interesting. When a partner does something unfamiliar, or gets it &ldquo;wrong,&rdquo; that should excite you rather than embarrass anyone &mdash; it challenges your muscle memory and opens a dimension you weren&rsquo;t expecting, the same way an unexpected note can make a piece of music more alive rather than less. Once, mid-move, someone else on the floor walked straight through the space Oscar had planned to move into. He had to stop dead. Embracing that unplanned interruption made the movement more interesting than the plan ever was &mdash; and it became a technique he now uses on purpose.</p>
+
+          <h3>Connection as a skill</h3>
+          <p>It isn&rsquo;t only chemistry with the &ldquo;right&rdquo; person. As a dancer develops, they become able to connect with more and more people over time &mdash; not everyone, but noticeably more than before. Leading and following are closer to a fifty-fifty co-creation than the lead directing everything: the more experienced a leader gets, the less they impose and the more they receive and shape around what the follower offers. The dance ends up different with every partner, because it&rsquo;s built from what that person actually brings, not applied to them from a template.</p>
+
+          <h3>Close embrace, honestly</h3>
+          <p>Close embrace isn&rsquo;t really about attraction. It&rsquo;s mostly about familiarity &mdash; Oscar&rsquo;s own first close-embrace experience felt shocking and unfamiliar, and people adjust with exposure. What matters more is reading a partner&rsquo;s real-time comfort with closeness: how much they extend, how much distance they hold, which varies by person and can vary day to day even for the same person. Sensing and respecting that is a teachable skill &mdash; one that even experienced teachers don&rsquo;t always get right.</p>
+
+          <h3>Who this is for</h3>
+          <p>Dancers of any experience level, and anyone genuinely interested in movement &mdash; not literally anyone off the street. If you&rsquo;ve never danced partner work before, start with a Rogue Bachata beginner class first, so the deRogue room can move forward together from some shared baseline. The one exception: every so often someone with no formal dance experience but a natural gift for listening walks in from their very first bachata class and turns out to be an exceptional follower. Dancing with someone like that is one of the best feelings there is.</p>
+
+          <h3>What we&rsquo;re not claiming</h3>
+          <p>Nobody here is chasing the title of best social dancer in the city &mdash; that&rsquo;s a bit like calling yourself the best socialiser. Connection isn&rsquo;t a rankable solo skill; it depends on the mix of people in the room. These exercises aren&rsquo;t about over-technicalising your dancing either &mdash; the only point of them is to help you connect better, and with more people. If you&rsquo;re genuinely expert at connection, it shows up as range: the ability to connect with far more people than you&rsquo;d have imagined, not the ability to dictate to a partner what to do.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -452,13 +487,40 @@
     </div>
     <ol class="principles">
       <li><span class="k">I</span><h3>Body, Bond, Beyond</h3><p>Ground in yourself, listen to your partner, expand into the space.</p></li>
-      <li><span class="k">II</span><h3>Legato</h3><p>Your centre of gravity travels on a continuous, unbroken path.</p><p class="ex">Practised with weight, resistance and rotation drills that train the body to stabilise without conscious effort.</p></li>
-      <li><span class="k">III</span><h3>Pause, Presence, Pivot</h3><p>Stop the movement, find each other, then redirect together.</p><p class="ex">A drill for both roles: breaking habitual patterns mid-movement so leads and follows stay present rather than running on autopilot.</p></li>
-      <li><span class="k">IV</span><h3>Bounce and Roll</h3><p>When bodies meet, rebound elastically or redirect.</p><p class="ex">Trained with and without contact &mdash; connection through touch, and connection through shared awareness alone.</p></li>
-      <li><span class="k">V</span><h3>Humility</h3><p>When connection is lost, surrender your movement and find your partner before continuing.</p><p class="ex">We treat the break as information, not fault &mdash; the same instinct that makes a "wrong" note interesting in music.</p></li>
-      <li><span class="k">VI</span><h3>Lazy, in time</h3><p>Relaxed, almost lazy, yet exactly on the music. A paradox shared by good dancing and good music.</p><p class="ex">Built on breath: a calm, deep breath lets the body move precisely while feeling unhurried.</p></li>
+      <li><span class="k">II</span><h3>Legato</h3><p>Your centre of gravity travels on a continuous, unbroken path.</p><p class="ex">The hardest principle to teach: the core has to move in an uninhibited, stable, flowing line while the rest of the body moves around it &mdash; neuromuscular control you can&rsquo;t consciously micromanage, only build through repetition.</p></li>
+      <li><span class="k">III</span><h3>Pause, Presence, Pivot</h3><p>Stop the movement, find each other, then redirect together.</p><p class="ex">A drill for both roles: deliberately interrupt a planned movement mid-way, feel the connection in that pause, then consciously choose a new direction &mdash; up, down, back, forward &mdash; instead of always finishing the move the habitual way. It stops follows from racing ahead of the actual signal, and stops leads running on autopilot.</p></li>
+      <li><span class="k">IV</span><h3>Bounce and Roll</h3><p>When bodies meet, rebound elastically or redirect.</p><p class="ex">&ldquo;Roll&rdquo; means the touching parts of the body stay in continuous rolling contact, never a static grip or a rub, unless you break it on purpose for a specific move. &ldquo;Bounce&rdquo; means bringing a partner in and letting them rebound elastically. Both are drilled with contact and without it. A lot of these principles are meant to be broken once you understand them &mdash; that&rsquo;s what deRogue is about.</p></li>
+      <li><span class="k">V</span><h3>Humility</h3><p>When connection is lost, surrender your movement and find your partner before continuing.</p><p class="ex">We treat the break as information, not fault &mdash; the same instinct that makes a &ldquo;wrong&rdquo; note interesting in music.</p></li>
+      <li><span class="k">VI</span><h3>Lazy, in time</h3><p>Relaxed, almost lazy, yet exactly on the music. A paradox shared by good dancing and good music.</p><p class="ex">Resolved through deep, calm breathing &mdash; the same thing that lets a singer or musician play a fast passage precisely while looking unhurried. With practice, time itself feels like it slows down, even though the execution is faster and sits exactly on the beat.</p></li>
     </ol>
-    <p class="principles-note">Every principle is trained through hands-on exercises in class &mdash; some with touch, some without, some using simple props. Come find out on the floor.</p>
+
+    <div class="exercises">
+      <h3>Some of the exercises</h3>
+      <div class="ex-grid">
+        <article>
+          <h4>The foam board</h4>
+          <p>Partners walk around the space keeping a small foam board wedged between them at hip height, roughly half an arm&rsquo;s length apart, without letting it drop. Trains stable, legato-quality walking.</p>
+        </article>
+        <article>
+          <h4>The office chair</h4>
+          <p>One partner becomes an &ldquo;office chair&rdquo; &mdash; staying at a constant height while the other rotates and travels them around the space on imaginary wheels. Legato quality, combined with rotation.</p>
+        </article>
+        <article>
+          <h4>Shared centre of gravity</h4>
+          <p>Two people hold hands close together without quite touching, sensing one shared centre of gravity between them, as if they were becoming one body. Connection carried by shared awareness of weight and balance, not physical contact.</p>
+        </article>
+        <article>
+          <h4>Filling the gaps</h4>
+          <p>A group &mdash; or a pair &mdash; walks around a space, continuously filling the empty gaps left by everyone else&rsquo;s movement, using every dimension of the room. Builds spatial awareness and connection to the whole floor, not just one partner.</p>
+        </article>
+        <article>
+          <h4>The Rogue lean</h4>
+          <p>Partners lean into each other &mdash; or lean out together, away from each other &mdash; to stay mutually supported through the connection point, rather than gripping or holding tension in the arms. It draws on leaning concepts already found in kizomba and tango. It also works with no touch at all: two hands held apart but sensed as leaning toward one another, pure inward energy, explored inward, outward and to the side.</p>
+        </article>
+      </div>
+    </div>
+
+    <p class="principles-note">These are a few of the exercises we use &mdash; there are more on the floor each week. Come find the rest in class.</p>
   </section>
 
   <section aria-labelledby="ds-h">
