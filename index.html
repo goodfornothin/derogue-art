@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,300;0,9..144,400;0,9..144,900;1,9..144,300&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-  /* Theme tokens. Ink = the logo as drawn. Night = inverted. Saffron = robe & marigold. */
+  /* Theme tokens. Ink = paper and black. Night = the same pair, inverted. Colour themes are not offered. */
   :root {
     --paper: #fbfaf7;
     --paper-2: #f1efe9;
@@ -59,11 +59,6 @@
     --paper: #fbfaf7; --paper-2: #f1efe9; --ink: #111110; --ink-soft: #55534e;
     --rule: #d9d6cd; --logo: #111110; --accent: #111110; --on-accent: #fbfaf7;
     color-scheme: light;
-  }
-  :root[data-look="saffron"] {
-    --paper: #4a1512; --paper-2: #5b1d18; --ink: #f6e7cf; --ink-soft: #d9b98f;
-    --rule: #7a3226; --logo: #f2a33a; --accent: #f2a33a; --on-accent: #3a100d;
-    color-scheme: dark;
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -225,6 +220,7 @@
   .venue-shot img {
     position: absolute; inset: 0; width: 100%; height: 100%;
     object-fit: cover; object-position: center 32%; display: block;
+    filter: grayscale(1);
   }
   .venue-shot-lead img { object-position: center 46%; }
   .venue-shot:nth-child(3) img { object-position: center 22%; }
@@ -306,6 +302,16 @@
     width: 100%; height: 100%;
     border: 0; display: block;
   }
+  .watch-poster {
+    position: absolute; inset: 0; display: block;
+    background: #111110; color: inherit; text-decoration: none;
+  }
+  .watch-poster img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    filter: grayscale(1);
+    transition: transform .4s ease, filter .4s ease;
+  }
+  .watch-poster:hover img { transform: scale(1.03); filter: grayscale(1) brightness(.9); }
   .watch-feature figcaption {
     margin-top: 14px;
     display: grid; gap: 2px;
@@ -317,8 +323,9 @@
     background: #111110; text-decoration: none;
   }
   .video-card.watch-earlier { margin: 0; max-width: none; width: 100%; }
-  .video-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease, filter .4s ease; }
-  .video-card:hover img { transform: scale(1.03); filter: brightness(.9); }
+  .video-card img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1); transition: transform .4s ease, filter .4s ease; }
+  .video-card:hover img { transform: scale(1.03); filter: grayscale(1) brightness(.9); }
+  .ig-poster { max-width: none; width: 100%; margin: 0; }
   .vc-play {
     position: absolute; inset: 0; display: grid; place-items: center;
     font-size: 1.4rem; color: #fff; background: rgba(0,0,0,.28);
@@ -540,7 +547,7 @@
 
     <div class="venue-gallery">
       <figure class="venue-shot venue-shot-lead">
-        <img src="assets/venue/keystone-crescent-dancefloor.jpg" width="574" height="928" alt="The wooden dancefloor at Keystone Crescent, with coloured lights and a mirror along the wall" loading="lazy" decoding="async">
+        <img src="assets/venue/keystone-crescent-dancefloor.jpg" width="574" height="928" alt="The wooden dancefloor at Keystone Crescent, with lights and a mirror along the wall" loading="lazy" decoding="async">
         <figcaption>The dancefloor</figcaption>
       </figure>
       <figure class="venue-shot">
@@ -577,9 +584,11 @@
         </div>
       </div>
       <div class="ig-embed">
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Da-enwpNs4G/" data-instgrm-version="14">
-          <a href="https://www.instagram.com/reel/Da-enwpNs4G/" target="_blank" rel="noopener">How to get to Keystone Crescent &mdash; directions on Instagram</a>
-        </blockquote>
+        <a class="video-card ig-poster" id="ig-play" href="https://www.instagram.com/reel/Da-enwpNs4G/" target="_blank" rel="noopener" data-instagram-reel="https://www.instagram.com/reel/Da-enwpNs4G/">
+          <img src="assets/directions/instagram-directions-reel-bw.jpg" width="361" height="640" alt="Black and white cover for the Keystone Crescent directions reel" loading="lazy" decoding="async">
+          <span class="vc-play" aria-hidden="true">&#9658;</span>
+          <span class="vc-label">Directions</span>
+        </a>
       </div>
     </div>
   </section>
@@ -640,13 +649,10 @@
     <div class="watch-stage">
       <figure class="watch-feature">
         <div class="watch-frame">
-          <iframe
-            src="https://www.youtube.com/embed/if4Lgn1M6sE"
-            title="deRogue Dance workshops in London for lead-follow and connection"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-            loading="lazy"></iframe>
+          <a class="watch-poster" id="watch-play" href="https://www.youtube.com/shorts/if4Lgn1M6sE" target="_blank" rel="noopener" data-youtube-id="if4Lgn1M6sE" data-title="deRogue Dance workshops in London for lead-follow and connection">
+            <img src="assets/watch/connection-short-if4Lgn1M6sE-bw.jpg" width="1080" height="1920" alt="Black and white cover for the deRogue connection clip" loading="lazy" decoding="async">
+            <span class="vc-play" aria-hidden="true">&#9658;</span>
+          </a>
         </div>
         <figcaption>
           <span class="eyebrow">On the floor</span>
@@ -794,15 +800,66 @@
       toggle.setAttribute("aria-pressed", String(current() === "night"));
     }
     function apply(look, save) {
+      if (look !== "ink" && look !== "night") look = "ink";
       root.setAttribute("data-look", look);
       if (save) { try { localStorage.setItem("derogue-look", look); } catch (e) {} }
       paint();
     }
     var stored = null;
     try { stored = localStorage.getItem("derogue-look"); } catch (e) {}
+    if (stored !== "ink" && stored !== "night") {
+      stored = null;
+      try { localStorage.removeItem("derogue-look"); } catch (e) {}
+    }
     apply(stored || current(), false);
     toggle.addEventListener("click", function () {
       apply(current() === "night" ? "ink" : "night", true);
+    });
+
+    var watchPlay = document.getElementById("watch-play");
+    watchPlay.addEventListener("click", function (event) {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+      var id = watchPlay.getAttribute("data-youtube-id");
+      if (!/^[A-Za-z0-9_-]{11}$/.test(id)) return;
+      event.preventDefault();
+      var frame = document.createElement("iframe");
+      frame.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1";
+      frame.title = watchPlay.getAttribute("data-title") || "deRogue video";
+      frame.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+      frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+      frame.allowFullscreen = true;
+      watchPlay.replaceWith(frame);
+    });
+
+    var igPlay = document.getElementById("ig-play");
+    igPlay.addEventListener("click", function (event) {
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
+      var permalink = igPlay.getAttribute("data-instagram-reel");
+      if (!permalink) return;
+      event.preventDefault();
+      var quote = document.createElement("blockquote");
+      quote.className = "instagram-media";
+      quote.setAttribute("data-instgrm-permalink", permalink);
+      quote.setAttribute("data-instgrm-version", "14");
+      var fallback = document.createElement("a");
+      fallback.href = permalink;
+      fallback.target = "_blank";
+      fallback.rel = "noopener";
+      fallback.textContent = "How to get to Keystone Crescent — directions on Instagram";
+      quote.appendChild(fallback);
+      igPlay.replaceWith(quote);
+      function process() {
+        if (window.instgrm && window.instgrm.Embeds) window.instgrm.Embeds.process();
+      }
+      if (window.instgrm && window.instgrm.Embeds) {
+        process();
+        return;
+      }
+      var script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.instagram.com/embed.js";
+      script.onload = process;
+      document.body.appendChild(script);
     });
     try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function () { if (!stored) paint(); }); } catch (e) {}
 
@@ -819,6 +876,5 @@
     });
   })();
 </script>
-<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
