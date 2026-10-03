@@ -355,15 +355,24 @@
   .practice .tag { font: 500 .7rem/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); }
   @media (max-width: 720px) { .practice { grid-template-columns: 1fr; } .practice article:nth-child(even) { padding-left: 0; border-left: 0; } }
 
-  /* Principles */
+  /* Concepts (the section formerly anchored as #principles) */
+  .anchor-alias { height: 0; overflow: hidden; scroll-margin-top: 72px; }
   .principles { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
-  .principles li { background: var(--paper); padding: 26px 24px 30px; display: grid; gap: 10px; align-content: start; transition: background-color .5s ease; }
+  .principles > li { background: var(--paper); padding: 26px 24px 30px; display: grid; gap: 10px; align-content: start; transition: background-color .5s ease; }
+  .principles > li.span,
+  .principles > li.wide { grid-column: 1 / -1; }
+  .principles > li.span p { max-width: 62ch; }
   .principles .k { font: 500 .72rem/1 var(--mono); color: var(--ink-soft); letter-spacing: .1em; }
   .principles h3 { font-size: 1.3rem; font-weight: 400; }
   .principles p { margin: 0; color: var(--ink-soft); font-size: .98rem; }
   .principles p.ex { font-size: .88rem; opacity: .9; border-top: 1px dashed var(--rule); padding-top: 10px; margin-top: 2px; line-height: 1.55; }
+  .principles .cores { list-style: none; margin: 8px -24px -30px; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); border-top: 1px solid var(--rule); }
+  .principles .cores li { background: var(--paper); padding: 18px 24px 22px; display: grid; gap: 6px; align-content: start; }
+  .principles .cores h4 { margin: 0; font-family: var(--display); font-size: 1.05rem; font-weight: 700; }
+  .principles .cores p { font-size: .92rem; line-height: 1.6; }
   .principles-note { margin: 18px 2px 0; color: var(--ink-soft); font-size: .88rem; }
   @media (max-width: 900px) { .principles { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 720px) { .principles .cores { grid-template-columns: 1fr; } }
   @media (max-width: 560px) { .principles { grid-template-columns: 1fr; } }
 
   /* Exercises */
@@ -412,7 +421,7 @@
       <a href="#philosophy">Philosophy</a>
       <a href="#watch">Watch</a>
       <a href="#practice">Practice</a>
-      <a href="#principles">Principles</a>
+      <a href="#concepts">Concepts</a>
     </nav>
     <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Toggle black and white theme" title="Toggle theme"></button>
   </div>
@@ -680,21 +689,44 @@
     </div>
   </section>
 
-  <section id="principles" aria-labelledby="pp-h">
+  <div id="principles" class="anchor-alias" aria-hidden="true"></div>
+  <section id="concepts" aria-labelledby="pp-h">
     <div class="sec-head">
-      <p class="eyebrow">Six principles</p>
+      <p class="eyebrow">Ten concepts</p>
       <div>
-        <h2 id="pp-h">The <b>principles</b> we teach from.</h2>
+        <h2 id="pp-h">The <b>deRogue Concepts</b> we teach from.</h2>
         <p>Developed on the social floor with Rogue Bachata, and written for any partner dance.</p>
       </div>
     </div>
     <ol class="principles">
-      <li><span class="k">I</span><h3>Body, Bond, Beyond</h3><p>Ground in yourself, listen to your partner, expand into the space.</p></li>
-      <li><span class="k">II</span><h3>Legato</h3><p>Your centre of gravity travels on a continuous, unbroken path.</p><p class="ex">The hardest principle to teach: the core has to move in an uninhibited, stable, flowing line while the rest of the body moves around it &mdash; neuromuscular control you can&rsquo;t consciously micromanage, only build through repetition.</p></li>
-      <li><span class="k">III</span><h3>Pause, Presence, Pivot</h3><p>Stop the movement, find each other, then redirect together.</p><p class="ex">A drill for both roles: deliberately interrupt a planned movement mid-way, feel the connection in that pause, then consciously choose a new direction &mdash; up, down, back, forward &mdash; instead of always finishing the move the habitual way. It stops follows from racing ahead of the actual signal, and stops leads running on autopilot.</p></li>
-      <li><span class="k">IV</span><h3>Bounce and Roll</h3><p>When bodies meet, rebound elastically or redirect.</p><p class="ex">&ldquo;Roll&rdquo; means the touching parts of the body stay in continuous rolling contact, never a static grip or a rub, unless you break it on purpose for a specific move. &ldquo;Bounce&rdquo; means bringing a partner in and letting them rebound elastically. Both are drilled with contact and without it. A lot of these principles are meant to be broken once you understand them &mdash; that&rsquo;s what deRogue is about.</p></li>
-      <li><span class="k">V</span><h3>Humility</h3><p>When connection is lost, surrender your movement and find your partner before continuing.</p><p class="ex">We treat the break as information, not fault &mdash; the same instinct that makes a &ldquo;wrong&rdquo; note interesting in music.</p></li>
-      <li><span class="k">VI</span><h3>Lazy, in time</h3><p>Relaxed, almost lazy, yet exactly on the music. A paradox shared by good dancing and good music.</p><p class="ex">Resolved through deep, calm breathing &mdash; the same thing that lets a singer or musician play a fast passage precisely while looking unhurried. With practice, time itself feels like it slows down, even though the execution is faster and sits exactly on the beat.</p></li>
+      <li><span class="k">I</span><h3>deRogue Body, Bond, Beyond</h3><p>Ground in yourself, listen to your partner, expand into the space.</p></li>
+      <li><span class="k">II</span><h3>deRogue Legato</h3><p>Your centre of gravity travels on a continuous, unbroken path.</p><p class="ex">The hardest principle to teach: the core has to move in an uninhibited, stable, flowing line while the rest of the body moves around it &mdash; neuromuscular control you can&rsquo;t consciously micromanage, only build through repetition.</p></li>
+      <li><span class="k">III</span><h3>deRogue Pause, Presence, Pivot</h3><p>Stop the movement, find each other, then redirect together.</p><p class="ex">A drill for both roles: deliberately interrupt a planned movement mid-way, feel the connection in that pause, then consciously choose a new direction &mdash; up, down, back, forward &mdash; instead of always finishing the move the habitual way. It stops follows from racing ahead of the actual signal, and stops leads running on autopilot.</p></li>
+      <li><span class="k">IV</span><h3>deRogue Bounce and Roll</h3><p>When bodies meet, rebound elastically or redirect.</p><p class="ex">&ldquo;Roll&rdquo; means the touching parts of the body stay in continuous rolling contact, never a static grip or a rub, unless you break it on purpose for a specific move. &ldquo;Bounce&rdquo; means bringing a partner in and letting them rebound elastically. Both are drilled with contact and without it. A lot of these principles are meant to be broken once you understand them &mdash; that&rsquo;s what deRogue is about.</p></li>
+      <li><span class="k">V</span><h3>deRogue Humility</h3><p>When connection is lost, surrender your movement and find your partner before continuing.</p><p class="ex">We treat the break as information, not fault &mdash; the same instinct that makes a &ldquo;wrong&rdquo; note interesting in music.</p></li>
+      <li><span class="k">VI</span><h3>deRogue Lazy, in time</h3><p>Relaxed, almost lazy, yet exactly on the music. A paradox shared by good dancing and good music.</p><p class="ex">Resolved through deep, calm breathing &mdash; the same thing that lets a singer or musician play a fast passage precisely while looking unhurried. With practice, time itself feels like it slows down, even though the execution is faster and sits exactly on the beat.</p></li>
+      <li class="span"><span class="k">VII</span><h3>deRogue Listening</h3><p>Listen to your partner instead of performing at them. It&rsquo;s really just connection.</p></li>
+      <li class="wide">
+        <span class="k">VIII</span>
+        <h3>deRogue Contact Immersion</h3>
+        <p>Stay in the contact long enough for it to tell you something. Touch is not a handle that takes you to the next step.</p>
+        <ol class="cores">
+          <li><h4>Stay</h4><p>Enter the contact and remain. If you leave as soon as it feels unclear, all you ever learn is the grab.</p></li>
+          <li><h4>Feel the weight</h4><p>Before you change the shape, sense how your partner is carrying themselves through the place you are touching.</p></li>
+          <li><h4>Distance moves</h4><p>How close you are is read while you dance, and it can change inside a single song. It is not fixed at the start.</p></li>
+        </ol>
+      </li>
+      <li class="span"><span class="k">IX</span><h3>deRogue Couple Balance</h3><p>It&rsquo;s not about independent balance, it&rsquo;s about couple balance.</p></li>
+      <li class="wide">
+        <span class="k">X</span>
+        <h3>deRogue Freedom Pathways</h3>
+        <p>When the connection is reliable, more than one continuation is available. A pattern is a way in, not the whole dance.</p>
+        <ol class="cores">
+          <li><h4>Choose the next moment</h4><p>What you started does not have to be what you finish. Stop, feel your partner, and pick a direction together.</p></li>
+          <li><h4>Either of you can open it</h4><p>A path can come from the follow as clearly as from the lead. The job is to notice it.</p></li>
+          <li><h4>Leave the known move</h4><p>Use something you both recognise to get in. Then let the connection take you somewhere the pattern does not list.</p></li>
+        </ol>
+      </li>
     </ol>
 
     <div class="exercises">
