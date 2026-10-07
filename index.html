@@ -184,33 +184,6 @@
   .ts-row time { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
   .ts-who { font-size: .85rem; margin-top: 4px; }
   .ts-free { color: var(--ink); font-weight: 600; }
-  .oct7 {
-    display: grid;
-    grid-template-columns: minmax(220px, 440px) minmax(0, 1fr);
-    gap: 22px;
-    align-items: start;
-    margin-bottom: 22px;
-  }
-  .event-poster { margin: 0; }
-  .event-poster img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border: 1px solid var(--rule);
-    filter: grayscale(1);
-  }
-  .event-poster figcaption {
-    margin-top: 8px;
-    font: 500 .72rem/1.4 var(--mono);
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-  .oct7 .ticket-stub { height: 100%; }
-  @media (max-width: 820px) {
-    .oct7 { grid-template-columns: 1fr; }
-    .event-poster { max-width: 440px; }
-  }
   @media (max-width: 720px) { .stub-grid { grid-template-columns: 1fr; } .ticket-stub { grid-template-columns: auto auto 1fr; } }
   @media (max-width: 460px) { .ticket-stub { grid-template-columns: 1fr; } .ts-date { flex-direction: row; padding: 14px 18px; grid-auto-flow: column; gap: 10px; } .ts-perf { width: auto; height: 0; border-left: 0; border-top: 2px dashed var(--rule); background-image: radial-gradient(circle, var(--paper) 3px, transparent 3.5px); background-size: 18px 100%; background-position: center; } }
 
@@ -486,33 +459,6 @@
       <p class="free-social-line">Free social, <b>9pm&ndash;late</b>.</p>
       <p class="fine">Both classes are 7:30&ndash;8:45pm. From 9pm until late, the social is free.</p>
     </aside>
-
-    <article class="oct7" aria-labelledby="oct7-h">
-      <figure class="event-poster">
-        <img src="assets/workshops/2026-10-07-poster.jpg" width="1414" height="2000" alt="Official poster for Wednesday 7 October 2026 at Keystone Crescent Members Club. deRogue connection workshop with Bo and Oscar, 7:30 to 8:45pm, for dancers of any background, experienced bachata dancers, and people passionate about movement and connection. Rogue Bachata open level Bachata class with Kieran, 7:30 to 8:45pm, for 0 to 1 year experience in Bachata. Free social 9pm to late. King's Cross N1 9DX.">
-        <figcaption id="oct7-h">Wednesday 7 October</figcaption>
-      </figure>
-      <div class="ticket-stub">
-        <div class="ts-date">
-          <span class="ts-day">07</span>
-          <span class="ts-mon">OCT</span>
-          <span class="ts-wd">Wednesday</span>
-        </div>
-        <div class="ts-perf" aria-hidden="true"></div>
-        <div class="ts-body">
-          <div class="ts-row"><time datetime="2026-10-07T19:30">7:30</time>&ndash;<time datetime="2026-10-07T20:45">8:45pm</time></div>
-          <div class="ts-row">Keystone Crescent Members Club, King&rsquo;s Cross, London N1 9DX</div>
-          <div class="ts-row ts-who">deRogue connection workshop &mdash; dancers of any background, experienced bachata dancers, and people passionate about movement and connection</div>
-          <div class="ts-row ts-who">Rogue Bachata open level Bachata class &mdash; 0 to 1 year experience in Bachata. Same time, 7:30&ndash;8:45pm</div>
-          <div class="ts-row ts-free">Free social 9pm&ndash;late</div>
-          <div class="ts-row">&pound;10 + booking fee</div>
-          <div class="ctas" style="margin-top:12px">
-            <a class="btn js-book" href="https://aalaap.app/e/rogue-bachata-wednesdays-keystone-crescent-pst3" target="_blank" rel="noopener">Book now</a>
-            <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Keystone+Crescent+Kings+Cross+London+N1+9DX" target="_blank" rel="noopener">Map</a>
-          </div>
-        </div>
-      </div>
-    </article>
 
     <div class="stub-grid">
       <div class="ticket-stub">
